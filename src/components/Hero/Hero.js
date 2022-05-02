@@ -1,16 +1,12 @@
 import React from "react";
+import "./Hero.css";
 
 import bgImg from "../assets/hero-img.jpg";
 
 const Hero = () => {
   return (
-    <div className="bg-gradient-to-tr from-black/40 to-black/20 w-full h-screen  relative flex items-center justify-center">
-      <img
-        src={bgImg}
-        alt=""
-        className="w-full h-screen object-cover absolute mix-blend-overlay"
-      />
-      <div className="text-white text-center ">
+    <div className="bg-hero w-full h-screen flex items-center justify-center bg-cover bg-center bg-hero--css">
+      <div className="text-white text-center    ">
         <h1 className="text-6xl font-mono font-extrabold">
           Learning Code EveryDay
         </h1>
