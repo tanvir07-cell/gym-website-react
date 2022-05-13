@@ -8,7 +8,7 @@ const Hero = () => {
     <div className="bg-hero w-full h-screen flex items-center justify-center bg-cover bg-center bg-hero--css">
       <div className="text-white text-center    ">
         <h1 className="text-6xl font-mono font-extrabold">
-          Learning Code EveryDay
+          Going Gym <span className="text-grad">Everyday</span>
         </h1>
         <p className="mt-5 font-semibold tracking-widest text-xl ">
           Passion and Passion Makes a man see their's vission

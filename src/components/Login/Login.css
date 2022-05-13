@@ -1,0 +1,94 @@
+.form{
+    display:flex;
+    align-items:center;
+    justify-content: center;
+    height:100vh;
+
+   
+   
+    
+}
+
+
+.form-container{
+    border-radius: 50px;
+    box-sizing: border-box;
+    background: #ecf0f3;
+    box-shadow: 14px 14px 20px #cbced1, -14px -14px 20px white;
+    height:250px;
+    width:250px;
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+    height:500px;
+    width:350px;
+    margin-top:5rem;
+
+    
+  
+
+    
+}
+
+
+
+.form-container .form-title{
+    background: -webkit-linear-gradient(#0d324d, #7f5a83);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 800;
+    text-align: center;
+    font-size:2rem;
+    margin-top:3rem;
+
+    
+}
+
+
+form{
+    margin-top:5rem;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+form input{
+    border-radius: 50px;
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    -ms-border-radius: 50px;
+    -o-border-radius: 50px;
+    border:none;
+    width:70%;
+    margin: 1rem auto;
+    display:block;
+    padding:0.8rem 1rem;
+    background: #ecf0f3;
+    box-shadow: inset 6px 6px 6px #cbced1, inset -6px -6px 6px white;
+}
+
+form input::placeholder{
+    background: -webkit-linear-gradient(#eee, #333);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  
+}
+
+form button{
+    background:linear-gradient(to right,#000,#e84393);
+    display:block;
+    width:70%;
+    margin: 1rem auto;
+    padding:0.8rem 1rem;
+    border-radius: 50px;
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    -ms-border-radius: 50px;
+    -o-border-radius: 50px;
+    color:#fff;
+    font-size: 1.2rem;
+    letter-spacing: 0.2rem;
+}
