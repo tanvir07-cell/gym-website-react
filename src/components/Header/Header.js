@@ -61,10 +61,10 @@ const Header = () => {
             </NavLink>
           </li>
           <li>
-            <NavLink to="/services">
+            <NavLink to="/checkout">
               {({ isActive }) => (
                 <span className={isActive ? "active-link" : undefined}>
-                  Services
+                  CheckOut
                 </span>
               )}
             </NavLink>

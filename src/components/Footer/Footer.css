@@ -1,14 +1,31 @@
 .footer{
-    background:linear-gradient(#333,#eee);
    
-
-   
-   
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    height:100vh;
+    width:100vw; 
+    position:absolute;
+    top:200%;
+    background:linear-gradient(#333,#ccc)
+    
+ 
 }
 
 .footer-content{
     height:350px;
     width:550px;
+    box-sizing: border-box;
+    background: #ecf0f3;
+    box-shadow: 14px 14px 20px #cbced1, -14px -14px 20px white;
+   
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+    
+  
 }
 
 
