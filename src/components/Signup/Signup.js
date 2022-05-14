@@ -1,16 +1,17 @@
 import React, { useEffect, useState } from "react";
-import "./Login.css";
+import { ToastContainer, toast } from "react-toastify";
+
 import { FaGoogle } from "react-icons/fa";
 import { BiShow } from "react-icons/bi";
 import auth from "../../Firebase/Firebase.init";
 import {
-  useSignInWithEmailAndPassword,
   useSignInWithGoogle,
+  useCreateUserWithEmailAndPassword,
 } from "react-firebase-hooks/auth";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 
-const Login = () => {
-  // show and hiding the pass:
+const Signup = () => {
+  // shwoing and hiding password:
   const [showPass, setShowPass] = useState(false);
 
   //  singInWith Google:
@@ -18,13 +19,14 @@ const Login = () => {
   const [signInWithGoogle, googleUser, googleLoading, googleError] =
     useSignInWithGoogle(auth);
 
-  // signInWith Email and Password:
-  const [signInWithEmailAndPassword, user, loading, error] =
-    useSignInWithEmailAndPassword(auth);
+  // signUpWith Email and Password:
+  const [createUserWithEmailAndPassword, user, loading, hooksError] =
+    useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
 
   const [userInfo, setUserInfo] = useState({
     email: "",
     password: "",
+    confirmPassword: "",
   });
 
   const [errors, setErrors] = useState({
@@ -56,9 +58,19 @@ const Login = () => {
     }
   };
 
+  const handleConfirmPasswordChange = (event) => {
+    if (event.target.value === userInfo.password) {
+      setUserInfo({ ...userInfo, confirmPassword: event.target.value });
+      setErrors({ ...errors, passwordError: "" });
+    } else {
+      setUserInfo({ ...userInfo, confirmPassword: "" });
+      setErrors({ ...errors, passwordError: "Password didn't match" });
+    }
+  };
+
   const handleSubmitForm = (event) => {
     event.preventDefault();
-    signInWithEmailAndPassword(userInfo.email, userInfo.password);
+    createUserWithEmailAndPassword(userInfo.email, userInfo.password);
   };
   const navigate = useNavigate();
   const location = useLocation();
@@ -66,7 +78,7 @@ const Login = () => {
 
   const from = location?.state?.from?.pathname || "/";
 
-  //  After google login User redirect to the home page
+  //  After google login && signUp with email and pass User redirect to the home page
   useEffect(() => {
     const User = googleUser || user;
     if (User) {
@@ -77,7 +89,7 @@ const Login = () => {
   return (
     <div className="form">
       <div className="form-container">
-        <div className="form-title">LOGIN</div>
+        <div className="form-title">Register</div>
         <form onSubmit={handleSubmitForm}>
           <input
             type="email"
@@ -86,9 +98,11 @@ const Login = () => {
             placeholder="Your Email"
             onChange={handleEmailChange}
           />
+
           {errors?.emailError && (
-            <p className="error-message ">{errors?.emailError}</p>
+            <p className="error-message  ">{errors?.emailError}</p>
           )}
+
           <div className="relative">
             <input
               type={showPass ? "text" : "password"}
@@ -102,16 +116,26 @@ const Login = () => {
               onClick={() => setShowPass(!showPass)}
             ></BiShow>
             {errors?.passwordError && (
-              <p className="error-message">{errors?.passwordError}</p>
+              <p className="error-message ">{errors?.passwordError}</p>
             )}
+          </div>
+
+          <div className="relative ">
+            <input
+              type="password"
+              name="confirm-password"
+              id=""
+              placeholder="Confirm password"
+              onChange={handleConfirmPasswordChange}
+            />
           </div>
 
           <button>Login</button>
         </form>
         <p className="text-center">
-          Don't have any account ?
-          <Link to="/signup" className="signup-link">
-            &nbsp;Please Register
+          Already have an account ?
+          <Link to="/login" className="signup-link">
+            &nbsp;Please SignIn
           </Link>
         </p>
         <button className="google" onClick={() => signInWithGoogle()}>
@@ -121,8 +145,10 @@ const Login = () => {
           </div>
         </button>
       </div>
+      {/* using react-toast  */}
+      <ToastContainer />
     </div>
   );
 };
 
-export default Login;
+export default Signup;

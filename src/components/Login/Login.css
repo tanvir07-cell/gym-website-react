@@ -15,16 +15,15 @@
     box-sizing: border-box;
     background: #ecf0f3;
     box-shadow: 14px 14px 20px #cbced1, -14px -14px 20px white;
-    height:250px;
-    width:250px;
+   
     border-radius: 20px;
     -webkit-border-radius: 20px;
     -moz-border-radius: 20px;
     -ms-border-radius: 20px;
     -o-border-radius: 20px;
-    height:500px;
-    width:350px;
-    margin-top:5rem;
+    height:600px;
+width:450px;
+    margin-top:6rem;
 
     
   
@@ -48,12 +47,17 @@
 
 
 form{
-    margin-top:5rem;
-    display:flex;
+   margin-top:2rem;
+ /* display:flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: center;  */
+   
+ 
+  
 }
+
+
 
 form input{
     border-radius: 50px;
@@ -62,12 +66,16 @@ form input{
     -ms-border-radius: 50px;
     -o-border-radius: 50px;
     border:none;
-    width:70%;
-    margin: 1rem auto;
+    width:80%;
+    margin: 2rem auto;
     display:block;
     padding:0.8rem 1rem;
     background: #ecf0f3;
     box-shadow: inset 6px 6px 6px #cbced1, inset -6px -6px 6px white;
+   
+  
+
+    
 }
 
 form input::placeholder{
@@ -77,11 +85,12 @@ form input::placeholder{
   
 }
 
-form button{
+ form button,.google{
     background:linear-gradient(to right,#000,#e84393);
     display:block;
-    width:70%;
-    margin: 1rem auto;
+    width:80%;
+    margin: 2rem auto;
+  
     padding:0.8rem 1rem;
     border-radius: 50px;
     -webkit-border-radius: 50px;
@@ -92,3 +101,44 @@ form button{
     font-size: 1.2rem;
     letter-spacing: 0.2rem;
 }
+
+
+
+
+
+input:focus{
+    outline:none;
+    border: 3px solid transparent;
+    background: linear-gradient(to left, #eee, #eee) padding-box,      linear-gradient(120deg,#000,#e84393) border-box;
+    border-image-slice: 1;
+    border-radius: 50px;
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    -ms-border-radius: 50px;
+    -o-border-radius: 50px;
+    transition: all .2s;
+    -webkit-transition: all .2s;
+    -moz-transition: all .2s;
+    -ms-transition: all .2s;
+    -o-transition: all .2s;
+}
+
+.error-message{
+    font-size: 12px;
+    color: red;
+   text-align: center;
+   margin:0;
+   
+}
+.error-message::before{
+    content: "❌ ";
+}
+
+.signup-link{
+    background: -webkit-linear-gradient(#0d324d, #7f5a83);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 800;
+
+}
+
