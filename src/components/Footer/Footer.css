@@ -61,8 +61,30 @@
 }
 
 @media (max-width:600px) {
-    .footer{
+    /* .footer{
         position:absolute;
-        top:350%;
+        top:450%;
+    }
+    .footer-content{
+       height:450px;
+        max-width:350px;
+        box-sizing: border-box;
+        background: #ecf0f3;
+        box-shadow: 14px 14px 20px #cbced1, -14px -14px 20px white;
+       
+        border-radius: 20px;
+        -webkit-border-radius: 20px;
+        -moz-border-radius: 20px;
+        -ms-border-radius: 20px;
+        -o-border-radius: 20px;
+        
+      
+    }
+    .footer-brand-text{
+        font-size:1.2rem;
+    } */
+
+    .footer{
+        display:none;
     }
 }

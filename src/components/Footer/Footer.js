@@ -13,7 +13,7 @@ const Footer = () => {
   };
 
   return (
-    <div className="footer">
+    <div className="footer overflow-x-hidden">
       <div className=" ">
         <div className=" footer-content">
           <div className="title">Let's Stay in touch</div>
