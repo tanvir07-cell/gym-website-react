@@ -1,9 +1,11 @@
 import React from "react";
+import "./NotFound.css";
+import notFound from "../../images/notFound.svg";
 
 const NotFound = () => {
   return (
-    <div>
-      <h1>Not Found</h1>
+    <div className="error-page">
+      <img src={notFound} alt="" />
     </div>
   );
 };

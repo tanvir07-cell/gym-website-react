@@ -8,6 +8,8 @@ import {
   useSignInWithGoogle,
 } from "react-firebase-hooks/auth";
 import { Link, useLocation, useNavigate } from "react-router-dom";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Login = () => {
   // show and hiding the pass:
@@ -19,7 +21,7 @@ const Login = () => {
     useSignInWithGoogle(auth);
 
   // signInWith Email and Password:
-  const [signInWithEmailAndPassword, user, loading, error] =
+  const [signInWithEmailAndPassword, user, loading, hooksError] =
     useSignInWithEmailAndPassword(auth);
 
   const [userInfo, setUserInfo] = useState({
@@ -74,6 +76,37 @@ const Login = () => {
     }
   }, [googleUser, user]);
 
+  useEffect(() => {
+    //   toast message ti ekbar jate dekhay jotobar ei click kori nah keno toast message ti jate ekbarei dekhay tar jonne
+    // {toastId:"id-1"} diye diyechi;
+    if (hooksError) {
+      switch (hooksError?.code) {
+        case "auth/user-not-found":
+          toast(
+            "Invalid User ! Please Provide a Valid Email Address or Password",
+            { toastId: "id-email" }
+          );
+          break;
+        case "auth/invalid-email":
+          toast(
+            "Invalid Email Provided ! Please Provide a Valid Email Address",
+            { toastId: "id-1" }
+          );
+          break;
+
+        case "auth/invalid-password":
+          toast("Wrong Password! Provide a valid Password", {
+            toastId: "id-2",
+          });
+          break;
+
+        default:
+          toast("Something Went Wrong", { toastId: "id-3" });
+          break;
+      }
+    }
+  }, [hooksError]);
+
   return (
     <div className="form">
       <div className="form-container">
@@ -121,6 +154,7 @@ const Login = () => {
           </div>
         </button>
       </div>
+      <ToastContainer></ToastContainer>
     </div>
   );
 };
