@@ -34,7 +34,7 @@ const MenuItems = ({ showMenu, active }) => {
       <li>
         <NavLink to="/">
           {({ isActive }) => (
-            <span className={isActive ? "active-link" : undefined}>Tasks</span>
+            <span className={isActive ? "active-link" : undefined}>Home</span>
           )}
         </NavLink>
       </li>
