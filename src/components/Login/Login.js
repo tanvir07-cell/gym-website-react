@@ -83,7 +83,7 @@ const Login = () => {
       switch (hooksError?.code) {
         case "auth/user-not-found":
           toast(
-            "Invalid User ! Please Provide a Valid Email Address or Password",
+            "Invalid User ! Please Provide a Valid Email Address or Passwordp",
             { toastId: "id-email" }
           );
           break;

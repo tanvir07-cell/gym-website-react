@@ -1,0 +1,33 @@
+.footer{
+    background:linear-gradient(#333,#eee);
+   
+
+   
+   
+}
+
+.footer-content{
+    height:350px;
+    width:550px;
+}
+
+
+
+
+
+.footer p{
+    margin-top:2rem;
+    color:#555;
+    text-align:center;
+   
+   
+    
+}
+
+.footer-brand-text{
+    text-align: center;
+    font-size:1.5rem;
+    padding-bottom:-7rem;
+    
+   
+}

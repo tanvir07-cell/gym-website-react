@@ -55,7 +55,7 @@ const Header = () => {
             <NavLink to="/">
               {({ isActive }) => (
                 <span className={isActive ? "active-link" : undefined}>
-                  Tasks
+                  Home
                 </span>
               )}
             </NavLink>
