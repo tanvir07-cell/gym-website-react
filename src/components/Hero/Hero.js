@@ -2,7 +2,7 @@ import React from "react";
 import "./Hero.css";
 
 import Tanvir from "../../images/Tanvir.png";
-
+import Arafat from "../../images/Arafat.png";
 import bgImg from "../assets/hero-img.jpg";
 import { useNavigate } from "react-router-dom";
 
@@ -27,8 +27,29 @@ const Hero = () => {
           <div className="services-card">
             <img src={Tanvir} alt="" />
             <div className="services-description">
-              <h1>Tanvir Rifat</h1>
-              <p className="services-price">Price : ${1230}</p>
+              <h1 className="text-red-800 font-mono font-semibold text-xl">
+                Sinha Rashed
+              </h1>
+              <p className="services-price text-red-800 font-mono font-semibold ">
+                Price : ${1230}
+              </p>
+              <button
+                className="services-btn"
+                onClick={() => navigate("/checkout")}
+              >
+                <span className="services-title">Hire Tranier</span>
+              </button>
+            </div>
+          </div>
+          <div className="services-card">
+            <img src={Arafat} alt="" />
+            <div className="services-description">
+              <h1 className="text-red-800 font-mono font-semibold text-xl">
+                Arafat Riman
+              </h1>
+              <p className="services-price text-red-800 font-mono font-semibold ">
+                Price : ${1030}
+              </p>
               <button
                 className="services-btn"
                 onClick={() => navigate("/checkout")}
@@ -40,21 +61,12 @@ const Hero = () => {
           <div className="services-card">
             <img src={Tanvir} alt="" />
             <div className="services-description">
-              <h1>Tanvir Rifat</h1>
-              <p className="services-price">Price : ${1230}</p>
-              <button
-                className="services-btn"
-                onClick={() => navigate("/checkout")}
-              >
-                <span className="services-title">Hire Tranier</span>
-              </button>
-            </div>
-          </div>
-          <div className="services-card">
-            <img src={Tanvir} alt="" />
-            <div className="services-description">
-              <h1>Tanvir Rifat</h1>
-              <p className="services-price">Price : ${1230}</p>
+              <h1 className="text-red-800 font-mono font-semibold text-xl">
+                Tanvir Rifat
+              </h1>
+              <p className="services-price text-red-800 font-mono font-semibold ">
+                Price : ${1230}
+              </p>
               <button
                 className="services-btn"
                 onClick={() => navigate("/checkout")}

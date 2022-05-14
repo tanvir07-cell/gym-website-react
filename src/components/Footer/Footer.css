@@ -12,6 +12,17 @@
  
 }
 
+
+.footer .title{
+    background: -webkit-linear-gradient(#0d324d, #7f5a83);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 800;
+    text-align: center;
+    font-size:2rem;
+    margin-top:3rem;
+}
+
 .footer-content{
     height:350px;
     width:550px;
@@ -47,4 +58,11 @@
     padding-bottom:-7rem;
     
    
+}
+
+@media (max-width:600px) {
+    .footer{
+        position:absolute;
+        top:350%;
+    }
 }

@@ -36,7 +36,7 @@ const Header = () => {
           className="uppercase font-bold text-3xl text-white-800 tracking-widest italic hover:not-italic drop-shadow-lg  text-transparent bg-clip-text bg-gradient-to-br from-gray-100
           to-gray-200"
         >
-          Tanvir Rifat
+          Galaxy Mania
         </h1>
       </div>
 
