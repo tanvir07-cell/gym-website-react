@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 import { FaGoogle } from "react-icons/fa";
 import { BiShow } from "react-icons/bi";
@@ -70,7 +71,9 @@ const Signup = () => {
 
   const handleSubmitForm = (event) => {
     event.preventDefault();
-    createUserWithEmailAndPassword(userInfo.email, userInfo.password);
+    if (userInfo.email && userInfo.password === userInfo.confirmPassword) {
+      createUserWithEmailAndPassword(userInfo.email, userInfo.password);
+    }
   };
   const navigate = useNavigate();
   const location = useLocation();
@@ -85,6 +88,39 @@ const Signup = () => {
       navigate(from);
     }
   }, [googleUser, user]);
+
+  //   firebase er behind the seen error dekhar jonne useEffect use kore response ti toast message e show korechi:
+
+  useEffect(() => {
+    //   toast message ti ekbar jate dekhay jotobar ei click kori nah keno toast message ti jate ekbarei dekhay tar jonne
+    // {toastId:"id-1"} diye diyechi;
+    if (hooksError) {
+      switch (hooksError?.code) {
+        case "Invalid registration":
+          toast("This email already exist! Please provide a new email", {
+            toastId: "id-email-exist",
+          });
+          break;
+
+        case "auth/invalid-email":
+          toast(
+            "Invalid Email Provided ! Please Provide a Valid Email Address",
+            { toastId: "id-1" }
+          );
+          break;
+
+        case "auth/invalid-password":
+          toast("Wrong Password! Provide a valid Password", {
+            toastId: "id-2",
+          });
+          break;
+
+        default:
+          toast("Something Went Wrong", { toastId: "id-3" });
+          break;
+      }
+    }
+  }, [hooksError]);
 
   return (
     <div className="form">
